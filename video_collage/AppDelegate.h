@@ -8,6 +8,7 @@
 
 #import "shot_detection.h"
 #import "make_collage.h"
+#import "video_saliency.h"
 #import <boost/scoped_ptr.hpp>
 #import <Quartz/Quartz.h>
 #import <Cocoa/Cocoa.h>

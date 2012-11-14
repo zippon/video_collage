@@ -350,7 +350,10 @@ tories=no, status=no, menubar=no, scrollbars=no, resizable=yes, copyhistory=no\
   output_html << "OpenWindow.document.write(\"<table width='100%' height='100%'\
 ><tr><td align='center' valign='middle'><video autoplay controls ondblclick='wi\
 ndow.close()' onloadeddata='this.currentTime=\"+skip+\"'><source src='\"+video_\
-path+\"'/></video></td><tr></BODY>\")}\n</script\></head><body><div style=\"mar\
+path+\"'/></video></td><tr></BODY>\")}\n</script\></head><style type=\"text/css\"> \
+body {background-image:url(/Users/WU/Projects/2012Collage/JMM_Demo/video_collag\
+e_bg.jpg);  background-position: top; background-repeat:repeat-x; background-attac\
+hment:fixed}</style><body><div style=\"mar\
 gin:20px auto; width:72%; position:relative;\">";
   for (int i = 0; i < shots.size(); ++i) {
     output_html << "<video ondblclick=\"openwin(";

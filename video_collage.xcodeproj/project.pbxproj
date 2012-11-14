@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9413840A1653DE14009BF497 /* video_saliency.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 941384081653DE14009BF497 /* video_saliency.cpp */; };
 		9424DAC71651345200B45FE9 /* make_collage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9424DAC51651345200B45FE9 /* make_collage.cpp */; };
 		94C56631164FBD4600516BFC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C56630164FBD4600516BFC /* Cocoa.framework */; };
 		94C5663B164FBD4600516BFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94C56639164FBD4600516BFC /* InfoPlist.strings */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		941384081653DE14009BF497 /* video_saliency.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = video_saliency.cpp; sourceTree = "<group>"; };
+		941384091653DE14009BF497 /* video_saliency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_saliency.h; sourceTree = "<group>"; };
 		9424DAC51651345200B45FE9 /* make_collage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = make_collage.cpp; sourceTree = "<group>"; };
 		9424DAC61651345200B45FE9 /* make_collage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = make_collage.h; sourceTree = "<group>"; };
 		94C5662C164FBD4600516BFC /* video_collage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = video_collage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +97,8 @@
 				94C56637164FBD4600516BFC /* Supporting Files */,
 				94C5664D164FDE7A00516BFC /* shot_detection.cpp */,
 				94C5664E164FDE7A00516BFC /* shot_detection.h */,
+				941384081653DE14009BF497 /* video_saliency.cpp */,
+				941384091653DE14009BF497 /* video_saliency.h */,
 				9424DAC51651345200B45FE9 /* make_collage.cpp */,
 				9424DAC61651345200B45FE9 /* make_collage.h */,
 			);
@@ -180,6 +185,7 @@
 				94C56644164FBD4600516BFC /* AppDelegate.mm in Sources */,
 				94C5664F164FDE7A00516BFC /* shot_detection.cpp in Sources */,
 				9424DAC71651345200B45FE9 /* make_collage.cpp in Sources */,
+				9413840A1653DE14009BF497 /* video_saliency.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -145,7 +145,6 @@ bool ShotDetection::Detect(const int expect_shot_num) {
   while (video_capture.grab()) {
     ++frame_counter;
     
-    // A: extract frames and shot detect based on STEP (default = 5)
     if (!(frame_counter % kFrameSkip)) {
       video_capture.retrieve(cur_image);
       float frame_diff = CompareFrameDiffHSV(cur_image, pre_image);

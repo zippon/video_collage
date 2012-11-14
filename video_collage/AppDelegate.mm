@@ -108,5 +108,53 @@ static NSString *openFiles()
 }
 
 - (IBAction)SaliencyCollage:(id)sender {
+  if ("" != video_path_) {
+    // Step 1: Shot detection.
+    boost::scoped_ptr<VideoSaliency> sal(new VideoSaliency(video_path_));
+    if (!sal->Detect(tile_num_)) {
+      NSAlert *alert= [NSAlert alertWithMessageText:@"Saliency Detection Failed."
+           defaultButton:@"OK" alternateButton:@"Cancel" otherButton:nil
+           informativeTextWithFormat:@"Sailency Detection Failed."];
+      if ([alert runModal]!=NSAlertDefaultReturn){
+        NSLog(@"cancel");
+      }
+      else{
+        NSLog(@"ok");
+      }
+    }
+    
+    // Step 2: Collage generation.
+    float tile_alpha = static_cast<float>(sal->frame_width()) /
+    sal->frame_height();
+    tile_num_ = sal->shot_num();
+    boost::scoped_ptr<VideoCollage> collage(new VideoCollage(tile_num_, tile_alpha));
+    if(!collage->CreateCollage(1000, 1.5, 1.05)) {
+      NSAlert *alert= [NSAlert alertWithMessageText:@"Collage Generation Failed." defaultButton:@"OK" alternateButton:@"Cancel" otherButton:nil
+          informativeTextWithFormat:@"Collage Generation Failed."];
+      if ([alert runModal]!=NSAlertDefaultReturn){
+        NSLog(@"cancel");
+      }
+      else{
+        NSLog(@"ok");
+      }
+    }
+    
+    // Step 3: Html output.
+    if (!OutputHtml(sal->shots(), collage->tile_array_size(),
+                    video_path_, "/tmp/video_collage.html")) {
+      NSAlert *alert= [NSAlert alertWithMessageText:@"Html Output Failed."
+           defaultButton:@"OK" alternateButton:@"Cancel" otherButton:nil
+           informativeTextWithFormat:@"Html Output Failed."];
+      if ([alert runModal]!=NSAlertDefaultReturn){
+        NSLog(@"cancel");
+      }
+      else{
+        NSLog(@"ok");
+      }
+    }
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL
+         URLWithString:@"file://localhost/private/tmp/video_collage.html"]];
+  }
 }
+
 @end
