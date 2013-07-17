@@ -124,8 +124,8 @@ bool VideoCollage::AdjustAlpha(TreeNode *node, const float thresh) {
       node->left_child_->alpha_expect_ = node->alpha_expect_ * 2;
       node->right_child_->alpha_expect_ = node->alpha_expect_ * 2;
     } else if (node->split_type_ == 'v') {
-      node->left_child_->alpha_expect_ = node->alpha_expect_ * 2;
-      node->right_child_->alpha_expect_ = node->alpha_expect_ * 2;
+      node->left_child_->alpha_expect_ = node->alpha_expect_ / 2;
+      node->right_child_->alpha_expect_ = node->alpha_expect_ */2;
     } else {
       cout << "Error: AdjustAlpha" << endl;
       return false;
